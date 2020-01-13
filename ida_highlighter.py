@@ -16,8 +16,8 @@ def highlight_insn(ea, color, comment="", repeatable=0):
 	idc.set_cmt(ea, comment, repeatable)
 
 def highlight_anti_debug():
-	funs = ["IsDebuggerPresent", "CheckRemoteDebuggerPresent", "NtQueryInformationProcess",
-		"OutputDebugString", "QueryPerformanceCounter", "GetTickCount"]
+	funs = ["IsDebuggerPresent", "CheckRemoteDebuggerPresent", "NtQueryInformationProcess", 
+			"OutputDebugString", "QueryPerformanceCounter", "GetTickCount"]
 	for func in funs:
 		func_ea = get_name_ea_simple(func)
 		xrefs = list(idautils.CodeRefsTo(func_ea, 0))
